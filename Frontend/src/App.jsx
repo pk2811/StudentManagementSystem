@@ -5,6 +5,7 @@ import ViewStudents from "./ViewStudents";
 import "./App.css"
 import StudentProfile from "./StudentProfile";
 import Login from "./Login";
+import { Toaster } from "react-hot-toast";
 
 export const myContext = createContext();
 const initialState = {
@@ -15,9 +16,9 @@ const initialState = {
     dateOfBirth: "",
     degree: "",
     gender:"",
-    attendance:"",
-  totalMarks:"",
-  obtainedMarks:""
+    attendance:0,
+  totalMarks:0,
+  obtainedMarks:0
   },
   filteredStudents:[],
   editId: null,
@@ -96,6 +97,8 @@ function App() {
 
   return (
     <myContext.Provider value={{ state, dispatch }}>
+     <Toaster  position="top-center"
+  reverseOrder={false}/>
       <RouterProvider router={myRouter} />
     </myContext.Provider>
   );

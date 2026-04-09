@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./StudentForm.css";
 import { myContext } from "./App";
 import { Label } from "recharts";
+import toast from "react-hot-toast";
 
 
 function StudentForm() {
@@ -41,7 +42,7 @@ function StudentForm() {
 
 
  if (!res.ok) {
-      window.alert("Email Already Found");
+      t
     } else {
       dispatch({ type: "RESET_FORM" });
       navigate("/viewStudents");
@@ -57,12 +58,10 @@ function StudentForm() {
       });
        const data=await res.json();
        
-       if (!res.ok) {
-      window.alert("Email Already Found");
-    } else {
+       toast.success("Student Added Successfully ✅")
       dispatch({ type: "RESET_FORM" });
       navigate("/viewStudents");
-    }
+    
     }
    
   };
@@ -111,7 +110,7 @@ function StudentForm() {
           <input
             className="formIn"
             name="obtainedMarks"
-            type="text"
+            type="number"
             placeholder="Enter obtained Mark"
             required
             value={state.form.obtainedMarks}
@@ -120,7 +119,7 @@ function StudentForm() {
           <input
             className="formIn"
             name="totalMarks"
-            type="text"
+            type="number"
             placeholder="Enter totalMark"
             required
             value={state.form.totalMarks}
@@ -129,9 +128,9 @@ function StudentForm() {
           <div className="gender">
            <label htmlFor="gender">Gender</label>
            <ul>
-            <li> <input type="radio" name="gender" id="male" value={state.form.gender??"male"} onChange={handleChange} /><p>Male</p></li>
-            <li> <input type="radio" name="gender" id="female"  value={state.form.gender??"female"} onChange={handleChange} /><p>Female</p></li>
-            <li><input type="radio" name="gender" id="other" value={state.form.gender??"other"} onChange={handleChange} /><p>Other</p></li>
+            <li> <input type="radio" name="gender" id="male" value={"male"} checked ={state.form.gender??"male"} onChange={handleChange} /><p>Male</p></li>
+            <li> <input type="radio" name="gender" id="female"  value={"female"} checked={state.form.gender??"female"} onChange={handleChange} /><p>Female</p></li>
+            <li><input type="radio" name="gender" id="other" value={"other"} checked={state.form.gender??"other"} onChange={handleChange} /><p>Other</p></li>
            </ul>
          </div> 
 

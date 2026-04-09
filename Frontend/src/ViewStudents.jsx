@@ -2,24 +2,27 @@ import React, { useContext, useEffect } from "react";
 import { myContext } from "./App";
 import { Link, useNavigate } from "react-router-dom";
 import "./ViewStudents.css";
+import toast from "react-hot-toast";
 
 const ViewStudents = () => {
   const { state, dispatch } = useContext(myContext);
 
   const navigate = useNavigate();
 
-  const deleteStudent = async (id) => {
+  const deleteStudent = async (t) => {
     const confirmDel = window.confirm("Are you sure ?");
 
     if (!confirmDel) return;
 
-    await fetch(`http://localhost:8080/students/${id}`, {
+    await fetch(`http://localhost:8080/students/${t.id}`, {
       method: "DELETE",
     });
 
+    toast.success(`Student  ${t.name} deleted `)
+
     dispatch({
       type: "SET_STUDENTS",
-      payload: state.students.filter((s) => s.id !== id),
+      payload: state.students.filter((s) => s.id !== t.id),
     });
   };
 
@@ -115,7 +118,10 @@ const ViewStudents = () => {
                   </button>
                 </td>
                 <td>
-                  <button id="delete" onClick={() => deleteStudent(s.id)}>
+                  <button id="delete" onClick={() => deleteStudent(s)
+
+                    
+                  }>
                     Delete
                   </button>
                 </td>
