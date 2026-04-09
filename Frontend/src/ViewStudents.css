@@ -1,0 +1,132 @@
+
+.viewCont {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+  
+}
+
+
+h2 {
+  text-align: center;
+  color: #fff;
+}
+
+nav{
+
+  background-color: cornflowerblue;
+  display: flex;
+  padding: 6px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  margin-bottom: 40px;
+}
+
+
+
+.viewIn {
+  
+text-align: center;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  
+}
+
+ .viewIn:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74,144,226,0.4);
+  outline: none;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+
+thead {
+  background-color: #4a90e2;
+  color: #fff;
+ 
+}
+
+thead th {
+  padding: 12px;
+  text-align:center;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+nav a{
+ 
+  text-align: center;
+  color: darkblue;
+  text-decoration: none;
+  font-weight: 500;
+  transition: .3s;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #f1f7ff;
+}
+
+tbody td {
+  padding: 12px;
+  color: #555;
+  text-align: center;
+}
+
+.profile:hover{
+  color: rgb(84, 137, 236);
+cursor: pointer;
+text-decoration: underline;
+}
+button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+button :hover {
+  background-color: #45a049;
+}
+
+
+#delete {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+#delete:hover {
+  background-color: #c0392b;
+}
+
+p {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
